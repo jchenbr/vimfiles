@@ -1,5 +1,5 @@
-"enable Vundle
-
+" ====< zuo = "no", die = "no"/>====
+" ----< zuo = "chapter # 0, Vundle", die = "true"/>----
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -14,6 +14,10 @@ Plugin 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 Plugin 'Valloric/YouCompleteMe'
+let mapleader = ","
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<cr>
+nnoremap <leader>gdf :YcmCompleter GoToDefinition<cr>
+nnoremap <leader>gdc :YcmCompleter GoToDeclaration<cr>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -29,8 +33,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-" ====< zuo = "no", die = "no"/>====
 
 " ----< zuo = "chapter # 1, vimrc basics", die = "true"/>----
 " Set mapleader
@@ -89,8 +91,6 @@ autocmd BufWinEnter \[Buf\ List\] setl nonumber
 let g:winManagerWindowLayout = "BufExplorer,FileExplorer|TagList"
 let g:winManagerWidth   = 30
 let g:defaultExplorer = 0
-nmap <C-W><C-F> :FirstExplorerWindow<cr>
-nmap <C-W><C-B> :BottomExplorerWindow<cr>
 nmap <silent> <leader>wm :WMToggle<cr>
 
 " Lookupfile
@@ -110,10 +110,13 @@ filetype plugin on
 filetype indent on
 set nocp
 
-"Set tab
-auto FileType c, cpp set shiftwidth = 4 | set expandtab
+"Set ta
+set shiftwidth=4 
+set tabstop=4 
+set softtabstop=4 
+set expandtab
 
-" ----< zuo = "chapter #6, highlight", die = "false" />----
+" ----< zuo = "chapter #6, highlight", die = "true" />----
 syntax enable
 set nu
 
@@ -128,9 +131,12 @@ colorscheme desert
 set hls
 set incsearch
 
-" ----< zuo = "chapter #7, quick fix, complete", die = "false" />----
-nmap <leader>cmk :w<cr>:make<cr>
+" ----< zuo = "chapter #7, quick fix, complete", die = "true" />----
+nmap <leader>mk :w<cr>:make<cr>
 nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
 nmap <leader>cw :cw 10<cr>
+
+" ---< zuo = "chapter #8, Scheme configuration", die = "false" />----
+autocmd filetype lisp,scheme,art setlocal equalprg=~/.vim/others/scmindent.rkt
 

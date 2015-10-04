@@ -31,3 +31,5 @@ hi cBinaryOperator          guifg=#3EFFE2
 hi cBinaryOperatorError     guifg=#3EFFE2
 hi cLogicalOperator         guifg=#3EFFE2
 hi cLogicalOperatorError    guifg=#3EFFE2
+
+set makeprg=g++\ -Wall\ -std=c++11\ %
